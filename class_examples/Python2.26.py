@@ -25,11 +25,16 @@ with open(filename) as f:
     #extract the data
     for row in reader:
         current_date = datetime.strptime(row[2],'%Y-%m-%d')
-        low = int(row[6])   #adding int so it's read like a number not a string
-        high = int(row[5])
-        dates.append(current_date)
-        lows.append(low)
-        highs.append(high)
+        #this block handles if there missing dates
+        try:
+            low = int(row[6])   #adding int so it's read like a number not a string
+            high = int(row[5])
+        except ValueError:
+            print(f"Missing data for {current_date}")
+        else:
+            dates.append(current_date)
+            highs.append(high)
+            lows.append(low)
 
 #plotting the data
 
