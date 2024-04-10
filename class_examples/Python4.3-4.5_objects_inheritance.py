@@ -2,7 +2,7 @@
 """
 Created on Wed Apr  3 11:27:05 2024
 
-@author: mwelz
+@author: mattwelz
 """
 
 #Looking at the object properties (data and methods) of numpy arrays
